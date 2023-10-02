@@ -1,0 +1,90 @@
+.switch {
+	text-align: right;
+	margin-bottom: 0.3rem;
+	user-select: none;
+}
+
+.switch__title {
+	font-size: 1.4rem;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+
+$Switch-color--off: #c8cccc;
+$Switch-color--offhover: #929a9b;
+$Switch-color--on: #59cb59;
+$Switch-color--onhover: #2bb656;
+$Switch-size--height: 24px;
+$Switch-size--width: 40px;
+$Switch-transition: 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+.switch__btn {
+	appearance: none;
+	width: $Switch-size--width;
+	height: $Switch-size--height;
+	font-family: inherit;
+	font-size: 11px;
+	border: 0;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 2px 4px;
+	border-radius: calc($Switch-size--height / 2);
+	cursor: pointer;
+	border: 1px solid $Switch-color--off;
+	background: $Switch-color--off;
+	position: relative;
+	text-align: right;
+	outline: none;
+	transition: background-color $Switch-transition;
+
+	&::before {
+		content: "";
+		background: #fff;
+		box-shadow: 0 0 0 1px $Switch-color--off;
+		position: absolute;
+		height: $Switch-size--height - 8px;
+		width: $Switch-size--height - 8px;
+		border-radius: 50%;
+		top: 50%;
+		left: 0;
+		transform: translate(3px, -50%);
+		transition: transform $Switch-transition;
+	}
+	&:hover,
+	&:focus {
+		border-color: $Switch-color--offhover;
+		&::before {
+			box-shadow: 0 0 2px 1px $Switch-color--offhover;
+		}
+	}
+	&[aria-checked="true"] {
+		border-color: $Switch-color--on;
+		background: $Switch-color--on
+			url("data:image/svg+xml;charset=utf8,%3Csvg width='14' height='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.378 11.37L2 7.59l1.438-1.286L5.374 8.47l5.185-5.84L12 3.91l-6.622 7.46' fill='%23fff'/%3E%3C/svg%3E")
+			no-repeat 4px center;
+		text-align: left;
+		color: $Switch-color--on;
+		&:hover,
+		&:focus {
+			background-color: $Switch-color--onhover;
+		}
+		&:focus {
+			border-color: $Switch-color--onhover;
+		}
+		&::before {
+			background: #fff;
+			transform: translate(20px, -50%);
+			box-shadow: 0 0 1px 1px darken($Switch-color--onhover, 1%);
+		}
+	}
+}
+
+.u-visuallyhidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+}

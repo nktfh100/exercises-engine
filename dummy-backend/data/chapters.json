@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Chapter 1",
+        "file": "chapter_1.json"
+    },
+    {
+        "id": 2,
+        "name": "Chapter 2",
+        "file": "chapter_2.json"
+    },
+    {
+        "id": 3,
+        "name": "Chapter 3",
+        "file": "chapter_3.json"
+    }
+]

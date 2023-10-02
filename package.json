@@ -1,0 +1,33 @@
+{
+  "name": "exercitia-latina-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "author": "nktfh100 <me@nktfh100.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve@latest out",
+    "lint": "next lint",
+    "deploy": "npm run build && surge ./out real-foot.surge.sh",
+    "deploy:prod": "npm run build && surge ./out exercitia-latina.surge.sh"
+  },
+  "dependencies": {
+    "next": "latest",
+    "next-seo": "^6.1.0",
+    "nextjs-google-analytics": "^2.3.3",
+    "nextjs-progressbar": "^0.0.16",
+    "react": "latest",
+    "react-dom": "latest",
+    "sass": "^1.68.0",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "surge": "^0.23.1",
+    "typescript": "latest"
+  }
+}

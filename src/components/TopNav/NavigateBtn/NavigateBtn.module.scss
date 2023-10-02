@@ -1,0 +1,14 @@
+.navigate-btn {
+	user-select: none;
+	font-size: 1.25rem;
+	width: 5rem;
+	text-align: center;
+	font-weight: bold;
+	color: black;
+	&:hover {
+		color: #0366d6;
+	}
+	@media (max-width: 900px) {
+		font-size: 1.12rem;
+	}
+}

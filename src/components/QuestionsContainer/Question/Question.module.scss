@@ -1,0 +1,21 @@
+.question {
+	overflow-wrap: break-word;
+	font-size: 1rem;
+	margin-top: 2rem;
+	padding-bottom: 1.2rem;
+	border-bottom: 1px solid #c5c5c5;
+	padding-left: 0.5rem;
+	&::marker {
+		font-weight: bold;
+	}
+}
+
+.question:last-child {
+	border-bottom: none;
+}
+
+@media (max-width: 900px) {
+	.question {
+		margin-left: 1.8rem;
+	}
+}

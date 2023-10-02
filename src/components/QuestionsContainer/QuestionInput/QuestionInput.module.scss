@@ -1,0 +1,47 @@
+.input {
+	display: inline-block;
+	position: relative;
+	&.input--correct .input__input {
+		border-bottom: 2px solid #59cb59;
+	}
+	&.input--incorrect .input__input {
+		border-bottom: 2px solid red;
+	}
+}
+
+.input__input {
+	font-size: 1rem;
+	color: black;
+	background-color: white;
+	border: none;
+	border-radius: 0px;
+	border-bottom: solid 2px rgb(134, 134, 134);
+	margin: 0px;
+	padding: 2px 0px;
+	width: 100%;
+	&:focus {
+		outline: none;
+		border-bottom: solid 2px black;
+	}
+}
+
+.input__answers {
+	visibility: hidden;
+	font-size: 1rem;
+	margin-top: 0.2rem;
+	margin-left: 0.2rem;
+	color: rgb(255, 0, 0);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	word-wrap: break-word;
+}
+
+.input__answers--show {
+	visibility: visible;
+}
+
+.input__answer-spacer {
+	height: 0;
+	visibility: hidden;
+}

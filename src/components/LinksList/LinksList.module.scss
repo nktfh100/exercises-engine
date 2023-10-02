@@ -1,0 +1,24 @@
+.links {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.links__item a {
+	display: block;
+	text-align: center;
+	font-size: 1.3rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	color: black;
+	transition: 0.3s;
+	width: 20rem;
+
+	&:hover {
+		color: #0366d6;
+		background-color: rgb(228, 228, 228);
+	}
+}

@@ -1,0 +1,35 @@
+name: Deploy to surge.sh
+run-name: Deploy to surge.sh 🚀
+on:
+    push:
+        branches:
+            - main
+
+env:
+    API_URL: ${{ secrets.API_URL }}
+
+jobs:
+    Deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.x
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build
+              run: npm run build
+
+            - name: Deploy to surge.sh
+              uses: dswistowski/surge-sh-action@v1.0.1
+              with:
+                  project: ./out
+                  domain: ${{ secrets.SURGE_DOMAIN }}
+                  login: ${{ secrets.SURGE_LOGIN }}
+                  token: ${{ secrets.SURGE_TOKEN }}
