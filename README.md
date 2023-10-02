@@ -11,7 +11,7 @@ For development, you will need to use the dummy-backend. (A simple express serve
 
 And create a `.env` file (based on `.env.example`)
 
-# Deployment
+## Deployment
 
 This project uses next.js static export, so you can deploy it anywhere that supports static sites.
 
