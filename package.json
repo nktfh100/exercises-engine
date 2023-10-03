@@ -7,9 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@latest out",
-    "lint": "next lint",
-    "deploy": "npm run build && surge ./out real-foot.surge.sh",
-    "deploy:prod": "npm run build && surge ./out exercitia-latina.surge.sh"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "latest",

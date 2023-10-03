@@ -1,30 +1,20 @@
-import LinksList from "@/components/LinksList/LinksList";
-import { getChaptersInfo } from "@/lib/apiUtils";
-import { IChapterInfo } from "@/lib/types";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
+import styles from "@/styles/Home.module.scss";
 
-export default function Page({ chapters }: { chapters: IChapterInfo[] }) {
+export default function Page() {
 	return (
 		<>
-			<NextSeo title="Chapters" />
-
-			<LinksList
-				items={chapters.map((item) => {
-					return {
-						to: `/chapter/${item.id}`,
-						title: `${item.name} - ${item.id}`,
-					};
-				})}
-			/>
+			<NextSeo title="Home" />
+			<h1 className={styles["title"]}>Exercitia Latina</h1>
+			<p className={styles["welcome"]}>Welcome!</p>
+			<p>
+				Please report errors
+				<Link href="https://github.com/nktfh100/exercitia-latina/issues">
+					{" "}
+					Here
+				</Link>
+			</p>
 		</>
 	);
-}
-
-export async function getStaticProps() {
-	const chapters = await getChaptersInfo();
-	return {
-		props: {
-			chapters,
-		},
-	};
 }
