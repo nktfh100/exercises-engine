@@ -6,6 +6,7 @@ import ExerciseNav from "@/components/TopNav/ExerciseNav/ExerciseNav";
 import QuestionsContainer from "@/components/QuestionsContainer/QuestionsContainer";
 import SwitchesContainer from "@/components/SwitchesContainer/SwitchesContainer";
 import { getChapterData, getChaptersInfo } from "@/lib/apiUtils";
+import { sleep } from "@/lib/utils";
 
 export default function Page({
 	chapterId,
@@ -51,16 +52,16 @@ export default function Page({
 export const getStaticPaths: GetStaticPaths = async () => {
 	const chapters = await getChaptersInfo();
 
-	const allChaptersData = await Promise.all(
-		chapters.map(async (chapter) => {
-			const chapterData = await getChapterData(chapter.id);
+	const allChaptersData = [];
 
-			return {
-				id: chapter.id,
-				exercises: chapterData.exercises.length,
-			};
-		})
-	);
+	for (let i = 0; i < chapters.length; i++) {
+		const chapter = chapters[i];
+		const chapterData = await getChapterData(chapter.id);
+		allChaptersData.push({
+			id: chapter.id,
+			exercises: chapterData.exercises.length,
+		});
+	}
 
 	const paths = allChaptersData.flatMap((chapter) =>
 		Array.from({ length: chapter.exercises }, (_, i) => ({

@@ -6,15 +6,22 @@ on:
             - main
     workflow_dispatch:
 
-env:
-    API_URL: ${{ secrets.API_URL }}
-
 jobs:
     Deploy:
         runs-on: ubuntu-latest
         steps:
             - name: Check out repository code
               uses: actions/checkout@v2
+
+            - name: Clear data directory
+              run: rm -rf ./data/*
+
+            - name: Get exercises data
+              uses: actions/checkout@v2
+              with:
+                  repository: "${{ secrets.EXERCISES_REPO }}"
+                  token: "${{ secrets._GITHUB_TOKEN }}"
+                  path: "./data"
 
             - name: Setup Node.js
               uses: actions/setup-node@v3
