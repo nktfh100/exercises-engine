@@ -1,9 +1,6 @@
-# Exercitia Latina
+# Fill in the blanks engine
 
-This repository contains the source code for the Exercitia Latina website. (without the actual data)
-
-
-Although this was originally made for LLPSI, this is basically a "fill in the blanks" website, so it can be used for any such use case with practically no code changes.
+This is a "Fill in the blanks" exercises engine that was originally built for Exercitia Latina.
 
 ## Deployment
 
