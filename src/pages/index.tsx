@@ -1,5 +1,6 @@
 import { NextSeo } from "next-seo";
 import Link from "next/link";
+
 import styles from "@/styles/Home.module.scss";
 
 export default function Page() {
