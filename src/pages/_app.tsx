@@ -1,14 +1,15 @@
 import "@/styles/globals.scss";
 
-import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
-import { GoogleAnalytics } from "nextjs-google-analytics";
-import Layout from "@/components/Layout/Layout";
-import NextNProgress from "nextjs-progressbar";
 import { Roboto } from "next/font/google";
-import { loadSettings } from "@/lib/store";
+import { GoogleAnalytics } from "nextjs-google-analytics";
+import NextNProgress from "nextjs-progressbar";
 import { useEffect } from "react";
 
+import Layout from "@/components/Layout/Layout";
+import { loadSettings } from "@/lib/store";
+
+import type { AppProps } from "next/app";
 const roboto = Roboto({
 	weight: ["400", "700"],
 	subsets: ["latin"],
@@ -35,11 +36,11 @@ export default function App({ Component, pageProps }: AppProps) {
 					type: "website",
 					locale: "en_IE",
 					url: "https://exercitia-latina.surge.sh",
-					siteName: "Exercitia Latina",
+					siteName: "Exercises Engine",
 				}}
-				titleTemplate={"%s | Exercitia Latina"}
-				defaultTitle={"Exercitia Latina"}
-				description={"LLPSI latin exercises chapters 1-35"}
+				titleTemplate={"%s | Exercises Engine"}
+				defaultTitle={"Exercises Engine"}
+				description={"Exercises Engine"}
 			/>
 
 			<GoogleAnalytics

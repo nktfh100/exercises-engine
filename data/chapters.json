@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "name": "Chapter 1",
+        "name": "Chapter I",
         "file": "chapter_1.json"
     },
     {
         "id": 2,
-        "name": "Chapter 2",
+        "name": "Chapter II",
         "file": "chapter_2.json"
     },
     {
         "id": 3,
-        "name": "Chapter 3",
+        "name": "Chapter III",
         "file": "chapter_3.json"
     }
 ]
